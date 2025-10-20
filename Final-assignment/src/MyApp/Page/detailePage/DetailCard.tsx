@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import DesktopDatailCard from './DesktopDatailCard';
+
 
 import type { Photo } from '../../component/interface/interface';
 import MobailDatailCard from './mobailDatailCard';
+import DesktopDatailCard from './DesktopDatailCard';
 
 interface DataProp {
   data: Photo;
