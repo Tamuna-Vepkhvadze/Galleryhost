@@ -12,7 +12,8 @@ services:
       - /app/node_modules
     environment:
       - PORT=5000
-      - CLIENT_URL=http://51.20.54.135:5173   # <-- შეცვლილია რეალური AWS IP
+      # თუ გინდა ნებისმიერი origin დაუშვა (მარტივი გამოსავალი):
+      - CLIENT_URLS=http://51.20.54.135:5173,http://localhost:5173
     depends_on:
       - db
 
@@ -26,7 +27,8 @@ services:
       - ./Final-assignment:/app
       - /app/node_modules
     environment:
-      - VITE_BACKEND_URL=http://backend:5000
+      # აქ უნდა იყოს AWS public IP ან დომენი, რომ ბრაუზერიდან მიუთითებდეს backend-ს
+      - VITE_BACKEND_URL=http://51.20.54.135:5000
     depends_on:
       - backend
 

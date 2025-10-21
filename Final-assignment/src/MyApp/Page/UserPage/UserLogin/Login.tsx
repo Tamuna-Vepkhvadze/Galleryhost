@@ -7,7 +7,7 @@ const Login = () => {
       title="Login"
       initialData={{ email: "", password: "" }}
       validationSchema={loginSchema}
-      apiEndpoint="http://localhost:5000/api/auth/login"
+      apiEndpoint="http://51.20.54.135:5000/api/auth/login"
       successRedirect="/"
       fields={[
         { name: "email", type: "email", placeholder: "Email" },

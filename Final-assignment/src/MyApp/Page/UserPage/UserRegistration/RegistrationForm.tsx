@@ -12,7 +12,7 @@ const RegistrationForm = () => {
         confirmPassword: "",
       }}
       validationSchema={registerSchema}
-      apiEndpoint="http://localhost:5000/api/auth/register"
+      apiEndpoint="http://51.20.54.135:5000/api/auth/register"
       successRedirect="/"
       fields={[
         { name: "firstName", placeholder: "სახელი" },
