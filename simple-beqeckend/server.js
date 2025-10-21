@@ -7,8 +7,18 @@ import authRoutes from "./routes/auth.js";
 dotenv.config();
 const app = express();
 
+// split multiple origins from .env
+const allowedOrigins = process.env.CLIENT_URLS.split(',');
+
 app.use(cors({
-  origin: process.env.CLIENT_URL, 
+  origin: function(origin, callback) {
+    if (!origin) return callback(null, true); // Postman ან direct request
+    if (allowedOrigins.indexOf(origin) === -1) {
+      const msg = "CORS policy does not allow access from this origin.";
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  },
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
