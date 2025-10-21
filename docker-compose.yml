@@ -1,3 +1,5 @@
+version: "3.9"
+
 services:
   backend:
     build:
@@ -10,7 +12,7 @@ services:
       - /app/node_modules
     environment:
       - PORT=5000
-      - CLIENT_URL=http://localhost:5173
+      - CLIENT_URL=http://51.20.54.135:5173   # <-- შეცვლილია რეალური AWS IP
     depends_on:
       - db
 
@@ -24,7 +26,7 @@ services:
       - ./Final-assignment:/app
       - /app/node_modules
     environment:
-      - VITE_BACKEND_URL=http://backend:5000   # <-- შეცვლილი
+      - VITE_BACKEND_URL=http://backend:5000
     depends_on:
       - backend
 
