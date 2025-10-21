@@ -42,8 +42,12 @@ const buttonRef = useRef<HTMLButtonElement | null>(null);
           {/* Desktop Navigation + RegisterButton - უცვლელი */}
           <div className="hidden md:flex items-center gap-6">
             <Navigation />
-            <RegisterButton />
+           
           </div>
+
+           <div className="hidden md:flex items-center gap-6">
+           <RegisterButton />
+           </div>
 
           {/* Mobile Menu Button - თანამედროვე სტილი */}
           <div className="md:hidden">
